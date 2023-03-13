@@ -14,7 +14,13 @@ app.post('/annotation', (req, res) => {
     const annotation = req.body.annotation;
     console.log(`URI: ${uri}`);
     console.log(`Annotation: ${annotation}`);
+    annotations.push({ uri, annotation });
     res.send(`URI: ${uri}<br>Annotation: ${annotation}`);
+});
+  
+  app.get('/annotations', (req, res) => {
+    const response = annotations.map(({ uri, annotation }) => `URI: ${uri}<br>Annotation: ${annotation}`).join('<br><br>');
+    res.send(response);
 });
 // un post. pour creer un annotation sur une URI
 // un get. qui renvoie une annotation
