@@ -1,0 +1,19 @@
+{
+  "name": "donneesconnectees",
+  "version": "1.0.0",
+  "description": "projet",
+  "main": "Helloworld.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoPdrse/PRojet0.git"
+  },
+  "author": "moi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoPdrse/PRojet0/issues"
+  },
+  "homepage": "https://github.com/NicoPdrse/PRojet0#readme"
+}
