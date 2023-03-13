@@ -18,7 +18,7 @@ app.post('/annotation', (req, res) => {
     res.send(`URI: ${uri}<br>Annotation: ${annotation}`);
 });
   
-  app.get('/annotations', (req, res) => {
+  app.get('/annotation', (req, res) => {
     const response = annotations.map(({ uri, annotation }) => `URI: ${uri}<br>Annotation: ${annotation}`).join('<br><br>');
     res.send(response);
 });
