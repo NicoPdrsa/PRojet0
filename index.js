@@ -5,6 +5,11 @@ var app = express();
 
 const port = 3000;
 
+app.get("/toto", function(req,resp){
+    resp.send("salut toto!");
+})
+
+
 app.listen(port, function(){
     console.log('serveur listening : '+port);
 })
