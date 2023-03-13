@@ -22,7 +22,7 @@
           var xhr = new XMLHttpRequest();
           var uri = document.getElementById("uri").value;
           var annotation = document.getElementById("annotation").value;
-          xhr.open("POST", "index.js", true);
+          xhr.open("POST", "https://projetdonneesconnectees-w8xn.onrender.com", true);
           xhr.setRequestHeader("Content-Type", "application/json");
           xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -36,6 +36,6 @@
       }
     </script>
 
-    
+
   </body>
 </html>
