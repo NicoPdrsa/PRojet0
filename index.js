@@ -37,9 +37,8 @@ app.post('/annotation', (req, res) => {
 // plus un code client avec html et js qui va appeler(POST) le code serveur et get annotations URI
 */
 
-app.post('/annotation', (req, res) => {
+app.post("/annotation", function(req, res){
     var body = req.body;
-    const annotation = req.body.annotation;
     data.push(body);
     res.send("comm saved");
 });
