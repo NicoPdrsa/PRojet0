@@ -56,6 +56,8 @@ app.get("/IdAnnot", function(req, res){
            'text/html': function() {
                 if (Exist){
                    res.send(ListFound); 
+				   console.log("Document HTML");
+
                 }
                 else {
                    res.send("aucune annotation n'est associée à cette clé");
@@ -65,6 +67,7 @@ app.get("/IdAnnot", function(req, res){
            'application/json': function() {
                 if (Exist){
                    res.send(ListFound); 
+				   console.log("Document JSON");
                 }
                 else {
                    res.send("aucune annotation n'est associée à cette clé");
@@ -92,11 +95,13 @@ app.get("/AllAnnot", function(req, res){
 		
 	res.format ({
 		   'text/html': function() {
-			  res.send(data); 
+				console.log("Document HTML");
+				res.send(data); 
 		   },
 
 		   'application/json': function() {
-			  res.send(data);
+				console.log("Document JSON");
+				res.send(data);
 			}
 	});
 	
@@ -128,10 +133,12 @@ app.get("/URI", function(req, res){
 	res.format ({
 		   'text/html': function() {
 			  res.send(tabRep); 
+			  console.log("Document HTML");
 		   },
 
 		   'application/json': function() {
 			  res.send(tabRep);
+			  console.log("Document JSON");
 			}
 	});
 	
