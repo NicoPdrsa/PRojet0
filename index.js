@@ -24,45 +24,54 @@ app.post("/annotation", function(req, res){
 
 
 app.get("/IdAnnot", function(req, res){
-	var IdAnnot = req.query.Annot;
-	
-	var Exist=Object.keys(data).includes(IdAnnot);
-	
-	var ChoixFormat=req.query.FormatIdAnnot;
-	
-	console.log(req.headers['accept']);
-	
-	if (ChoixFormat=="html"){
-		req.headers['accept']= 'text/html';
-	}
-	else {
-		if (ChoixFormat=="Json"){
-			req.headers['accept']=  'application/json';
-		}	
-	}
-	
-	console.log(req.headers['accept']);
-	
-	res.format ({
-		   'text/html': function() {
-			    if (Exist){
-				   res.send(data[IdAnnot]); 
-			    }
-			    else {
-				   res.send("aucune annotation n'est associée à cette clé");
-			    }
-		   },
+    var IdAnnot = req.query.Annot;
 
-		   'application/json': function() {
-			    if (Exist){
-				   res.send(data[IdAnnot]); 
-			    }
-			    else {
-				   res.send("aucune annotation n'est associée à cette clé");
-			    }
-			}
-	});
-	
+    var Exist=false;
+
+    var ListFound = [];
+
+    for (key in data){
+        if (data[key]["Commentaire"]==IdAnnot){
+            Exist = true;
+            ListFound.push(data[key]);
+        }
+    }
+
+    var ChoixFormat=req.query.FormatIdAnnot;
+
+    console.log(req.headers['accept']);
+
+    if (ChoixFormat=="html"){
+        req.headers['accept']= 'text/html';
+    }
+    else {
+        if (ChoixFormat=="Json"){
+            req.headers['accept']=  'application/json';
+        }
+    }
+
+    console.log(req.headers['accept']);
+
+    res.format ({
+           'text/html': function() {
+                if (Exist){
+                   res.send(ListFound); 
+                }
+                else {
+                   res.send("aucune annotation n'est associée à cette clé");
+                }
+           },
+
+           'application/json': function() {
+                if (Exist){
+                   res.send(ListFound); 
+                }
+                else {
+                   res.send("aucune annotation n'est associée à cette clé");
+                }
+            }
+    });
+
 });
 
 
