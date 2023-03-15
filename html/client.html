@@ -46,15 +46,11 @@
 				
 			};
 			
-		
-		
-		
-		
-		
 		</script>
 	</head>
 	<body>
-		
+
+
 		<h1>Ecrire Annotation</h1>
 		<form autocomplete="off">
 			<p>
@@ -69,16 +65,8 @@
 				<button onclick="envoi()" type="button">Envoyer</button>
 			</p>
 		</form>
-		
-		<p id="IdRes">
-		
-		</p>
-		
-		
-		
-		
-		
-		
+
+
 		<h1>Acceder à une annotation</h1>
 		<form action="/RecupAnnotUniq" method="GET" autocomplete="off">
 			<p>
@@ -96,13 +84,8 @@
 				<input type="submit" value="Submit">  
 			</p>
 		</form>
-		
-		
-		
-		
-		
-		
-		
+
+
 		<h1>Acceder à toutes les annotations</h1>
 		<form action="/AllAnnot" method="GET" autocomplete="off">
 			<p>
@@ -116,11 +99,10 @@
 				<input type="submit" value="Submit">  
 			</p>
 		</form>
-		
-		
-		
+
+
 		<h1>Acceder aux annotations d'une URI</h1>
-		<form action="/URI" method="GET" autocomplete="off">
+		<form action="/AnnotURI" method="GET" autocomplete="off">
 			<p>
 				<label for="AnnotURI">URI :</label>
 				<input type="text" name="AnnotURI" id="AnnotURI" placeholder="" size="30">
@@ -138,7 +120,5 @@
 			</p>
 		</form>
 		
-		
-
 	</body>
 </html>
