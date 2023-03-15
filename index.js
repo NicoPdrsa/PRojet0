@@ -23,7 +23,7 @@ app.post("/annotation", function(req, res){
 });
 
 
-app.get("/IdAnnot", function(req, res){
+app.get("/RecupAnnotUniq", function(req, res){
     var IdAnnot = req.query.Annot;
 
     var Exist=false;
@@ -31,7 +31,7 @@ app.get("/IdAnnot", function(req, res){
     var ListFound = [];
 
     for (key in data){
-        if (data[key]["Commentaire"]==IdAnnot){
+        if (key==IdAnnot){
             Exist = true;
             ListFound.push(data[key]);
         }
@@ -39,7 +39,6 @@ app.get("/IdAnnot", function(req, res){
 
     var ChoixFormat=req.query.FormatIdAnnot;
 
-    console.log(req.headers['accept']);
 
     if (ChoixFormat=="html"){
         req.headers['accept']= 'text/html';
@@ -50,7 +49,6 @@ app.get("/IdAnnot", function(req, res){
         }
     }
 
-    console.log(req.headers['accept']);
 
     res.format ({
            'text/html': function() {
@@ -108,7 +106,7 @@ app.get("/AllAnnot", function(req, res){
 });
 
 
-app.get("/URI", function(req, res){
+app.get("/AnnotURI", function(req, res){
 	var IdURI = req.query.AnnotURI;
 	
 	var ChoixFormat=req.query.FormatAnnotURI;
@@ -117,7 +115,7 @@ app.get("/URI", function(req, res){
 	
 	for (key in data){
 		if (data[key]["URI"]==IdURI){
-			tabRep.push({"IdAnnotation" : data[key], "Commentaire" : data[key]["Commentaire"]});
+			tabRep.push({"Clé" : key, "Commentaire" : data[key]["Commentaire"]});
 		}
 	}
 	

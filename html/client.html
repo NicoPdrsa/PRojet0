@@ -55,14 +55,14 @@
 	</head>
 	<body>
 		
-		<h1>Ecrire commentaire</h1>
+		<h1>Ecrire Annotation</h1>
 		<form autocomplete="off">
 			<p>
 				<label for="URI">URI :</label>
 				<input type="text" name="URI" id="IdURI" placeholder="" size="30">
 			</p>
 			<p>
-				<label for="Commentaire">Ajoutez commentaire</label><br>
+				<label for="Commentaire">Ajoutez une annotation</label><br>
 				<textarea name="Commentaire" id="IdCommentaire" size="30"></textarea>
 			</p>
 			<p> 
@@ -80,9 +80,9 @@
 		
 		
 		<h1>Acceder à une annotation</h1>
-		<form action="/IdAnnot" method="GET" autocomplete="off">
+		<form action="/RecupAnnotUniq" method="GET" autocomplete="off">
 			<p>
-				<label for="Annot">Annot :</label>
+				<label for="Annot">Clé de l'annotation recherchée :</label>
 				<input type="text" name="Annot" id="IdAnnot" placeholder="" size="30" maxlength="20">
 			</p>
 			<p>
@@ -120,7 +120,7 @@
 		
 		
 		<h1>Acceder aux annotations d'une URI</h1>
-		<form action="/URI" method="GET" autocomplete="off">
+		<form action="/AnnotURI" method="GET" autocomplete="off">
 			<p>
 				<label for="AnnotURI">URI :</label>
 				<input type="text" name="AnnotURI" id="AnnotURI" placeholder="" size="30">
